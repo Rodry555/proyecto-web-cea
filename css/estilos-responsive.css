@@ -133,26 +133,6 @@
         font-size: 1.35rem;
     }
     
-    /* Header apilado */
-    .cabecera {
-        flex-direction: column;
-        gap: var(--espaciado-medio);
-    }
-    
-    .menu-principal ul {
-        gap: var(--espaciado-chico);
-        justify-content: center;
-    }
-    
-    .menu-principal a {
-        font-size: 0.85rem;
-    }
-    
-    .carrito-icono a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-    
     /* Hero */
     .hero-banner {
         padding: var(--espaciado-grande) var(--espaciado-medio);
