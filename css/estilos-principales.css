@@ -373,7 +373,7 @@ a:hover {
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-secundario), var(--color-acento));
+    background-color: var(--color-acento);
     margin: var(--espaciado-chico) auto 0;
     border-radius: 2px;
 }
