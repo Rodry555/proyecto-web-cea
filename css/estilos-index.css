@@ -335,49 +335,6 @@
     line-height: 1.5;
 }
 
-/* --- Botón Flotante Asistente IA --- */
-.boton-flotante-ia {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    display: flex;
-    align-items: center;
-    gap: var(--espaciado-chico);
-    background: linear-gradient(135deg, var(--color-secundario), #9c1984);
-    color: white;
-    padding: 14px 22px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(194, 24, 91, 0.4);
-    transition: all var(--transicion-media);
-    z-index: 1000;
-    animation: pulseFlotante 2s ease-in-out infinite;
-}
-
-@keyframes pulseFlotante {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 6px 20px rgba(194, 24, 91, 0.4);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 8px 28px rgba(194, 24, 91, 0.6);
-    }
-}
-
-.boton-flotante-ia:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 30px rgba(194, 24, 91, 0.6);
-    animation: none;
-}
-
-.boton-flotante-ia .icono-ia {
-    font-size: 1.4rem;
-}
-
 /* --- Responsive para Index --- */
 @media (max-width: 768px) {
     .hero-section {
@@ -422,15 +379,6 @@
     .grid-beneficios {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--espaciado-medio);
-    }
-
-    .boton-flotante-ia .texto-ia {
-        display: none;
-    }
-
-    .boton-flotante-ia {
-        padding: 14px;
-        border-radius: 50%;
     }
 }
 
