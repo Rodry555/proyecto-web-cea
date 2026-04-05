@@ -37,66 +37,84 @@
     <!-- Contenido principal: Contacto -->
     <main class="contenedor-principal">
         <h1>Contacto y Ubicación</h1>
-        <p class="intro-contacto">¿Tenés alguna consulta? ¿Querés agendar una cita para un servicio? ¡Escribinos o visitanos!</p>
+        <p class="intro-contacto">¿Tenés alguna consulta? ¡Escribinos o visitanos en nuestra tienda!</p>
 
-        <div class="grid-contacto">
-            <!-- Información de contacto -->
-            <section class="info-contacto-seccion">
+        <!-- 1. BLOQUE DE CONFIANZA (Fachada + Info) -->
+        <section class="bloque-confianza">
+            <div class="confianza-imagen">
+                <!-- Placeholder para la foto real de la fachada -->
+                <img src="imagenes/fachada-tienda.jpg" alt="Fachada de la tienda en El Alto" loading="lazy">
+                <div class="placeholder-texto">📷 Foto de la fachada</div>
+            </div>
+            
+            <div class="confianza-info">
                 <h2>Nuestra Tienda</h2>
-                <div class="detalle-contacto">
-                    <h3>Dirección</h3>
-                    <p>Av. Cívica 456, Zona Central, El Alto, La Paz - Bolivia</p>
-                </div>
                 
-                <div class="detalle-contacto">
-                    <h3>Horario de Atención</h3>
-                    <ul>
-                        <li>Lunes a Viernes: 9:00 - 20:00</li>
-                        <li>Sábados: 9:00 - 18:00</li>
-                        <li>Domingos: Cerrado</li>
-                    </ul>
-                </div>
-
-                <div class="detalle-contacto">
-                    <h3>Teléfonos</h3>
-                    <p>Celular: +591 789 456 12</p>
-                    <p>Fijo: +591 2 284 5678</p>
-                </div>
-
-                <div class="detalle-contacto">
-                    <h3>Correo Electrónico</h3>
-                    <p>contacto@bellezaalteña.com</p>
-                </div>
-
-                <div class="detalle-contacto">
-                    <h3>Conecta con nosotros</h3>
-                    <div class="redes-sociales">
-                        <a href="https://wa.me/59178945612" target="_blank" rel="noopener noreferrer" class="boton-whatsapp">WhatsApp</a>
-                        <!-- Otras redes sociales si existen -->
+                <div class="dato-contacto">
+                    <span class="icono-dato">📍</span>
+                    <div>
+                        <h3>Dirección</h3>
+                        <p>Av. Cívica 456, Zona Central, El Alto, La Paz - Bolivia</p>
                     </div>
                 </div>
-            </section>
 
-            <!-- Mapa interactivo -->
-            <section class="mapa-seccion">
-                <h2>Encuéntranos</h2>
-                <div class="contenedor-mapa">
-                    <!-- Mapa de El Alto, La Paz - Bolivia -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15236.47!2d-68.15!3d-16.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915eddf0a2e4dbb1%3A0x234567890abcdef!2sEl%20Alto%2C%20Bolivia!5e0!3m2!1ses!2sbo!4v1234567890" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Mapa de ubicación de la tienda en El Alto">
-                    </iframe>
+                <div class="dato-contacto">
+                    <span class="icono-dato">🕒</span>
+                    <div>
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a Viernes: 9:00 - 20:00</p>
+                        <p>Sábados: 9:00 - 18:00</p>
+                        <p>Domingos: Cerrado</p>
+                    </div>
                 </div>
-            </section>
-        </div>
 
-        <!-- Formulario de contacto -->
+                <div class="dato-contacto">
+                    <span class="icono-dato">📞</span>
+                    <div>
+                        <h3>Teléfonos</h3>
+                        <p>Celular: +591 789 456 12</p>
+                        <p>Fijo: +591 2 284 5678</p>
+                    </div>
+                </div>
+
+                <div class="dato-contacto">
+                    <span class="icono-dato">✉️</span>
+                    <div>
+                        <h3>Correo Electrónico</h3>
+                        <p>contacto@bellezaalteña.com</p>
+                    </div>
+                </div>
+
+                <div class="dato-contacto redes">
+                    <a href="https://wa.me/59178945612" target="_blank" rel="noopener noreferrer" class="boton-whatsapp">
+                        <span>💬</span> Escribinos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MAPA CON ACCIÓN DIRECTA -->
+        <section class="mapa-accion">
+            <h2>¿Cómo llegar?</h2>
+            <div class="contenedor-mapa">
+                <!-- Mapa de El Alto, La Paz - Bolivia -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15236.47!2d-68.15!3d-16.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915eddf0a2e4dbb1%3A0x234567890abcdef!2sEl%20Alto%2C%20Bolivia!5e0!3m2!1ses!2sbo!4v1234567890" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de ubicación de la tienda en El Alto">
+                </iframe>
+            </div>
+            <a href="https://www.google.com/maps/dir//Av.+C%C3%ADvica+456,+El+Alto,+Bolivia" target="_blank" rel="noopener noreferrer" class="boton-como-llegar">
+                📍 Abrir en Google Maps
+            </a>
+        </section>
+
+        <!-- 3. FORMULARIO DE CONTACTO -->
         <section class="formulario-contacto-seccion">
             <h2>Envíanos un Mensaje</h2>
             <form id="formulario-contacto" class="formulario-contacto" action="enviar-mensaje.php" method="POST">

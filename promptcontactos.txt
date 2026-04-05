@@ -1,0 +1,15 @@
+Página de Contacto (Confianza)
+En tu archivo contacto.html, el mapa es lo más importante.
+    Formato: No pongas solo el mapa de Google. Pon una foto real de la fachada de tu tienda (se le agregara la imagen real respues pero la parte de el codigo generala).
+    En contextos locales, la gente se guía mucho por cómo se ve el edificio o los letreros de la calle.
+    Botón de Acción Directa: Añade un botón de "Cómo llegar" que abra directamente Google Maps en el celular del usuario.
+Aquí tienes la sugerencia de formato visual paso a paso:
+1. El "Bloque de Confianza" (Fachada + Info)
+En lugar de separar la foto de los datos, únelos. El cerebro humano procesa imágenes 60,000 veces más rápido que el texto.
+    Formato: Un diseño de Dos Columnas (Desktop) que se apila en una (Móvil).
+    Izquierda: Una foto de alta calidad de la fachada. Tip: Asegúrate de que en la foto se vea claramente el letrero (letrería) y quizás un punto de referencia cercano (una esquina conocida o un edificio distintivo).
+    Derecha: Los datos de contacto con íconos limpios.
+2. El Mapa con "Botón de Acción Directa"
+El error común es poner el mapa y esperar que el usuario sepa qué hacer. Necesitas un CTA (Call to Action) claro.
+    Diseño: Coloca el mapa a todo el ancho de su contenedor, pero superpone (o pon justo debajo) un botón flotante o destacado.
+    El Botón: "Abrir en Google Maps" o "Cómo llegar ahora".
