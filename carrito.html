@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Carrito de Reserva - Nombre del Negocio</title>
+    <link rel="stylesheet" href="css/estilos-principales.css">
+    <link rel="stylesheet" href="css/estilos-carrito.css">
+    <link rel="stylesheet" href="css/estilos-formularios.css">
+    <link rel="stylesheet" href="css/estilos-responsive.css">
+</head>
+<body>
+
+    <!-- Cabecera común -->
+    <header class="cabecera">
+        <div class="logo">
+            <img src="imagenes/iconos/logo.svg" alt="Logo del negocio">
+        </div>
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito-icono" id="carrito-icono">
+            <a href="carrito.html" class="activo">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                   <circle cx="9" cy="21" r="1"></circle>
+                   <circle cx="20" cy="21" r="1"></circle>
+                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+               </svg>
+               <span class="contador-reservas">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido principal: Carrito de Reserva -->
+    <main class="contenedor-principal">
+        <h1>Mi Carrito de Reserva</h1>
+        
+        <div class="contenido-carrito">
+            <!-- Lista de productos en el carrito -->
+            <section class="lista-productos-carrito">
+                <table class="tabla-carrito">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio Normal</th>
+                            <th>Precio Reserva (10% dto)</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla-carrito">
+                        <!-- Los productos se añadirán aquí dinámicamente con JS -->
+                        <!-- Ejemplo de fila de producto (se remove con JS en implementación real) -->
+                        <!-- 
+                        <tr data-id="1">
+                            <td>
+                                <div class="info-producto-carrito">
+                                    <img src="imagenes/productos/producto-ejemplo-1.jpg" alt="Producto 1">
+                                    <div>
+                                        <h3>Nombre del Producto</h3>
+                                        <p class="marca">Marca</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="precio-normal">$45.000</td>
+                            <td class="precio-descuento">$40.500</td>
+                            <td>
+                                <input type="number" min="1" value="1" class="cantidad-producto" aria-label="Cantidad">
+                            </td>
+                            <td class="subtotal-producto">$40.500</td>
+                            <td>
+                                <button class="boton-eliminar" aria-label="Eliminar producto">X</button>
+                            </td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+                
+                <div id="mensaje-carrito-vacio" class="mensaje-carrito-vacio">
+                    <p>Tu carrito está vacío.</p>
+                    <a href="catalogo.html" class="boton-ver-catalogo">Ver Productos</a>
+                </div>
+            </section>
+
+            <!-- Resumen de la reserva -->
+            <aside class="resumen-reserva">
+                <h2>Resumen de tu Reserva</h2>
+                <div class="detalle-resumen">
+                    <div class="fila-resumen">
+                        <span>Subtotal:</span>
+                        <span id="subtotal-carrito">$0</span>
+                    </div>
+                    <div class="fila-resumen descuento">
+                        <span>Descuento (10%):</span>
+                        <span id="descuento-carrito">-$0</span>
+                    </div>
+                    <div class="fila-resumen total">
+                        <span>Total a pagar en tienda:</span>
+                        <span id="total-carrito">$0</span>
+                    </div>
+                </div>
+                <p class="aviso-resumen">El descuento se aplica al confirmar la reserva.</p>
+
+                <!-- Formulario de confirmación de reserva -->
+                <div class="formulario-confirmacion">
+                    <h3>Confirmar Reserva</h3>
+                    <form id="formulario-reserva" action="reserva-confirmada.html" method="GET">
+                        <div class="grupo-formulario">
+                            <label for="nombre-reserva">Nombre completo</label>
+                            <input type="text" id="nombre-reserva" name="nombre" required placeholder="Tu nombre">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="email-reserva">Correo electrónico</label>
+                            <input type="email" id="email-reserva" name="email" required placeholder="tu@email.com">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="telefono-reserva">Teléfono (recomendado para recordatorios)</label>
+                            <input type="tel" id="telefono-reserva" name="telefono" placeholder="+51 987 654 321">
+                        </div>
+
+                        <div class="terminos-condiciones">
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">Acepto las <a href="politica-reservas.html">políticas de reserva</a> y el plazo de recogida de 48 horas.</label>
+                        </div>
+
+                        <button type="submit" class="boton-confirmar-reserva">Confirmar Reserva</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="info-contacto">
+            <p> Dirección: Calle Falsa 123, Lima</p>
+            <p> Teléfono: +51 987 654 321</p>
+            <p> correo@negocio.com</p>
+        </div>
+        <div class="enlaces-legales">
+            <a href="libro-reclamaciones.html">Libro de Reclamaciones</a>
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="politica-reservas.html">Política de Reservas</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 - Nombre del Negocio
+        </div>
+    </footer>
+
+    <script src="js/scripts-globales.js" defer></script>
+    <script src="js/carrito.js" defer></script>
+
+    <!-- Botón Flotante Asistente IA -->
+    <button
+        class="boton-flotante-ia"
+        id="abrir-chat"
+        aria-label="Abrir Asistente Virtual"
+    >
+        <span class="icono-ia">🤖</span>
+        <span class="texto-ia">Asistente IA</span>
+    </button>
+</body>
+</html>

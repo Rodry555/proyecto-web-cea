@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>Nombre del Negocio - Belleza Integral</title>
+        <link rel="stylesheet" href="css/estilos-principales.css" />
+        <link rel="stylesheet" href="css/estilos-index.css" />
+        <link rel="stylesheet" href="css/estilos-responsive.css" />
+    </head>
+    <body>
+        <!-- Cabecera común (Sticky) -->
+        <header class="cabecera">
+            <div class="logo">
+                <img src="imagenes/iconos/logo.svg" alt="Logo del negocio" />
+            </div>
+            <nav class="menu-principal">
+                <ul>
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito-icono" id="carrito-icono">
+                <a href="carrito.html">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path
+                            d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                        ></path>
+                    </svg>
+                    <span class="contador-reservas">0</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="contenedor-principal">
+            <!-- 1. HERO SECTION (Bienvenida) -->
+            <section class="hero-section" id="inicio">
+                <div class="hero-contenido">
+                    <h1>
+                        Reservá online, pagá en tienda y
+                        <span class="texto-destacado">ahorrá un 10%</span>
+                    </h1>
+                    <p>
+                        Descubrí nuestro catálogo completo de productos de
+                        belleza integral. Reservá con descuento exclusivo y
+                        retirá en nuestra tienda física.
+                    </p>
+                    <div class="hero-botones">
+                        <a href="catalogo.html" class="boton-reservar"
+                            >Explorar Catálogo</a
+                        >
+                        <a href="#como-reservar" class="boton-secundario"
+                            >¿Cómo funciona?</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PRODUCTOS MÁS VENDIDOS (Grid 4 productos) -->
+            <section class="productos-destacados" id="mas-vendidos">
+                <h2>Los Más Vendidos</h2>
+                <p class="intro-seccion">
+                    Productos estrella elegidos por nuestros clientes.
+                </p>
+
+                <div class="grid-productos-destacados">
+                    <!-- Producto 1: Maquillaje -->
+                    <article class="tarjeta-producto-destacado">
+                        <div class="imagen-contenedor">
+                            <img
+                                src="imagenes/productos/producto-ejemplo-2.jpg"
+                                alt="Base de Maquillaje Natural"
+                                loading="lazy"
+                            />
+                            <span class="badge-categoria">Maquillaje</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>Base de Maquillaje Natural</h3>
+                            <p class="descripcion">
+                                Cobertura media con acabado natural y SPF 20.
+                            </p>
+                            <div class="precios">
+                                <span class="precio-normal">$65.000</span>
+                                <span class="precio-descuento">$58.500</span>
+                            </div>
+                            <button
+                                class="boton-reservar"
+                                data-id-producto="2"
+                            >
+                                Reservar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 2: Cuidado Facial -->
+                    <article class="tarjeta-producto-destacado">
+                        <div class="imagen-contenedor">
+                            <img
+                                src="imagenes/productos/producto-ejemplo-1.jpg"
+                                alt="Crema Hidratante Vital"
+                                loading="lazy"
+                            />
+                            <span class="badge-categoria">Cuidado Facial</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>Crema Hidratante Vital</h3>
+                            <p class="descripcion">
+                                Hidratación intensiva que nutre y repara la
+                                barrera cutánea.
+                            </p>
+                            <div class="precios">
+                                <span class="precio-normal">$45.000</span>
+                                <span class="precio-descuento">$40.500</span>
+                            </div>
+                            <button
+                                class="boton-reservar"
+                                data-id-producto="1"
+                            >
+                                Reservar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 3: Cuidado Corporal -->
+                    <article class="tarjeta-producto-destacado">
+                        <div class="imagen-contenedor">
+                            <img
+                                src="imagenes/productos/producto-ejemplo-3.jpg"
+                                alt="Loción Corporal Regeneradora"
+                                loading="lazy"
+                            />
+                            <span class="badge-categoria"
+                                >Cuidado Corporal</span
+                            >
+                        </div>
+                        <div class="info-producto">
+                            <h3>Loción Corporal Regeneradora</h3>
+                            <p class="descripcion">
+                                Con aloe vera y vitamina E. Regenera y suaviza
+                                la piel.
+                            </p>
+                            <div class="precios">
+                                <span class="precio-normal">$38.000</span>
+                                <span class="precio-descuento">$34.200</span>
+                            </div>
+                            <button
+                                class="boton-reservar"
+                                data-id-producto="3"
+                            >
+                                Reservar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 4: Cuidado Capilar -->
+                    <article class="tarjeta-producto-destacado">
+                        <div class="imagen-contenedor">
+                            <img
+                                src="imagenes/productos/producto-ejemplo-4.jpg"
+                                alt="Shampoo Hidratante Reparador"
+                                loading="lazy"
+                            />
+                            <span class="badge-categoria">Cuidado Capilar</span>
+                        </div>
+                        <div class="info-producto">
+                            <h3>Shampoo Hidratante Reparador</h3>
+                            <p class="descripcion">
+                                Sin sulfatos, para cabello seco y dañado. Aroma
+                                a coco.
+                            </p>
+                            <div class="precios">
+                                <span class="precio-normal">$32.000</span>
+                                <span class="precio-descuento">$28.800</span>
+                            </div>
+                            <button
+                                class="boton-reservar"
+                                data-id-producto="4"
+                            >
+                                Reservar
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="ver-todo-catalogo">
+                    <a href="catalogo.html" class="boton-ver-catalogo"
+                        >Ver Todo el Catálogo</a
+                    >
+                </div>
+            </section>
+
+            <!-- 3. CÓMO RESERVAR (Pasos Visuales) -->
+            <section class="como-reservar" id="como-reservar">
+                <h2>¿Cómo Reservar?</h2>
+                <p class="intro-seccion">
+                    Seguí estos 3 simples pasos y aprovechá el descuento
+                    especial por reserva online.
+                </p>
+
+                <div class="pasos-container">
+                    <!-- Paso 1 -->
+                    <div class="paso">
+                        <div class="paso-icono">🛒</div>
+                        <div class="paso-numero">1</div>
+                        <h3>Elegí tus productos</h3>
+                        <p>
+                            Explorá nuestro catálogo online, seleccioná los
+                            productos que desees y agregalos al carrito.
+                        </p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="paso">
+                        <div class="paso-icono">📝</div>
+                        <div class="paso-numero">2</div>
+                        <h3>Confirmá tu reserva</h3>
+                        <p>
+                            Completá el formulario con tus datos. Recibirás un
+                            código de reserva único por email.
+                        </p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="paso">
+                        <div class="paso-icono">🏪</div>
+                        <div class="paso-numero">3</div>
+                        <h3>Pasá a retirar y pagar</h3>
+                        <p>
+                            Acudí a la tienda en 48 horas, mostrá tu código,
+                            pagá y llevate tus productos con descuento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cta-reserva">
+                    <a href="catalogo.html" class="boton-reservar"
+                        >Ir al Catálogo</a
+                    >
+                </div>
+            </section>
+
+            <!-- 4. ¿POR QUÉ RESERVAR? (Beneficios) -->
+            <section class="por-que-reservar" id="beneficios">
+                <h2>¿Por qué reservar con nosotros?</h2>
+                <p class="intro-seccion">
+                    Reservar online tiene ventajas exclusivas que no encontrás en
+                    tienda.
+                </p>
+
+                <div class="grid-beneficios">
+                    <!-- Beneficio 1 -->
+                    <div class="beneficio">
+                        <div class="beneficio-icono">🏷️</div>
+                        <h3>10% de descuento</h3>
+                        <p>
+                            Exclusivo para reservas online. Ahorrá en cada
+                            compra simplemente reservando antes.
+                        </p>
+                    </div>
+
+                    <!-- Beneficio 2 -->
+                    <div class="beneficio">
+                        <div class="beneficio-icono">🏪</div>
+                        <h3>Retirá sin esperas</h3>
+                        <p>
+                            Tus productos te esperan listos en tienda. Sin
+                            filas, sin demoras.
+                        </p>
+                    </div>
+
+                    <!-- Beneficio 3 -->
+                    <div class="beneficio">
+                        <div class="beneficio-icono">💳</div>
+                        <h3>Pagá como quieras</h3>
+                        <p>
+                            Efectivo, tarjeta de débito, crédito o
+                            transferencia. Vos elegís.
+                        </p>
+                    </div>
+
+                    <!-- Beneficio 4 -->
+                    <div class="beneficio">
+                        <div class="beneficio-icono">⏰</div>
+                        <h3>Sin compromiso</h3>
+                        <p>
+                            Reservá sin pago anticipado. Si cambiás de idea,
+                            no pasa nada.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="pie-pagina">
+            <div class="info-contacto">
+                <p>Dirección: Calle Falsa 123, Lima</p>
+                <p>Teléfono: +51 987 654 321</p>
+                <p>correo@negocio.com</p>
+            </div>
+            <div class="enlaces-legales">
+                <a href="libro-reclamaciones.html">Libro de Reclamaciones</a>
+                <a href="politica-privacidad.html">Política de Privacidad</a>
+                <a href="politica-reservas.html">Política de Reservas</a>
+            </div>
+            <div class="copyright">&copy; 2025 - Nombre del Negocio</div>
+        </footer>
+
+        <!-- Botón Flotante Asistente IA -->
+        <button
+            class="boton-flotante-ia"
+            id="abrir-chat"
+            aria-label="Abrir Asistente Virtual"
+        >
+            <span class="icono-ia">🤖</span>
+            <span class="texto-ia">Asistente IA</span>
+        </button>
+
+        <script src="js/scripts-globales.js" defer></script>
+    </body>
+</html>

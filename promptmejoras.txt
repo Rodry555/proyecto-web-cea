@@ -1,0 +1,35 @@
+1. El Orden del index (La Estructura)
+
+Tu orden propuesto tiene sentido, pero le falta un paso crucial al principio. Aquí tienes la estructura ideal y más estándar para tu página de inicio:
+
+    Navegador (Navbar): Perfecto. Debe ir arriba, idealmente "pegajoso" (sticky) para que los acompañe al bajar.
+
+    EL GRAN AUSENTE - El "Hero" (Sección de bienvenida): Antes de mostrar los productos, necesitas un banner principal con un título claro y directo sobre qué ofreces y por qué eres la mejor opción (ej. "Encuentra la mejor tecnología rápido y seguro", junto a un botón de "Ver Catálogo").
+
+    Productos más vendidos: Excelente posición. Justo después de la bienvenida, vas directo al grano mostrando lo que la gente más busca.
+
+    Cómo reservar (Cómo funciona): Estratégicamente está perfecto aquí. Una vez que vieron algo que les gusta, su siguiente duda es "¿y cómo lo compro/reservo?". Explicarlo aquí les da confianza.
+
+    Asistente IA: En lugar de ser una sección "bloque" al fondo de la página, los asistentes de IA funcionan mucho mejor como un botón flotante (generalmente en la esquina inferior derecha) que acompaña al usuario en todo momento. Así, si tienen dudas viendo un producto o leyendo cómo reservar, la IA está a un clic de distancia.
+
+2. ¿Carrusel para todo? (Alternativas visuales)
+
+Usar carruseles para todo es un error común. Aunque ahorran espacio, a menudo ocultan información valiosa. Aquí te dejo las formas más apropiadas para cada caso:
+
+Para "Productos más vendidos": Cuadrícula (Grid) en lugar de Carrusel
+
+    Por qué: En los carruseles, los productos que están a partir de la tercera o cuarta posición casi nunca se ven (los usuarios rara vez hacen clic en las flechitas).
+
+    La alternativa: Usa un diseño de Tarjetas en Cuadrícula (Cards Grid). Muestra los 4, 6 u 8 mejores productos en formato de tarjetas estáticas. En dispositivos móviles, la gente está súper acostumbrada a hacer scroll (deslizar hacia abajo), prefieren eso a deslizar hacia los lados.
+
+Para "Cómo reservar": Proceso por Pasos (Steps) en lugar de Carrusel
+
+    Por qué: Nunca uses un carrusel para instrucciones. Un proceso debe verse en su totalidad para que el cerebro del usuario entienda que es fácil y rápido. Si el paso 3 está oculto en un carrusel, genera fricción.
+
+    La alternativa: Usa un diseño de Pasos Visuales. Tres columnas o tres filas (1. Elige tu producto, 2. Haz tu reserva, 3. Coordinamos la entrega) con íconos grandes y texto corto. Todo visible de un solo vistazo.
+
+¿Se puede hacer solo con CSS? ¡Sí!
+
+    Para la cuadrícula de productos y los pasos de reserva, usa CSS Grid o Flexbox. Son las herramientas definitivas para esto.
+
+    Si aún así quieres un carrusel (por ejemplo, para testimonios o una sección específica), puedes hacerlo 100% con CSS usando la propiedad scroll-snap-type. Es fluido y funciona perfecto en celulares sin una sola línea de JS.

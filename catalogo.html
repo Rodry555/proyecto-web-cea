@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Catálogo - Nombre del Negocio</title>
+    <link rel="stylesheet" href="css/estilos-principales.css">
+    <link rel="stylesheet" href="css/estilos-catalogo.css">
+    <link rel="stylesheet" href="css/estilos-responsive.css">
+</head>
+<body>
+
+    <!-- Cabecera común -->
+    <header class="cabecera">
+        <div class="logo">
+            <img src="imagenes/iconos/logo.svg" alt="Logo del negocio">
+        </div>
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito-icono" id="carrito-icono">
+            <a href="carrito.html">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                   <circle cx="9" cy="21" r="1"></circle>
+                   <circle cx="20" cy="21" r="1"></circle>
+                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+               </svg>
+               <span class="contador-reservas">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido principal: Catálogo -->
+    <main class="contenedor-principal">
+        <h1>Nuestro Catálogo</h1>
+        <p class="intro-catalogo">Explorá nuestros productos de belleza integral y reservá online con un 10% de descuento.</p>
+
+        <!-- Barra de herramientas del catálogo -->
+        <section class="barra-catalogo">
+            <!-- Buscador -->
+            <div class="buscador-productos">
+                <input type="search" id="buscador" name="buscador" placeholder="Buscar producto por nombre o marca..." aria-label="Buscar productos">
+                <button class="boton-buscar" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Filtros de categoría (Pills) -->
+            <div class="filtros-categoria">
+                <button class="pill-categoria activo" data-categoria="todos">Todos</button>
+                <button class="pill-categoria" data-categoria="maquillaje">Maquillaje</button>
+                <button class="pill-categoria" data-categoria="cuidado-facial">Cuidado Facial</button>
+                <button class="pill-categoria" data-categoria="cuidado-corporal">Cuidado Corporal</button>
+                <button class="pill-categoria" data-categoria="cuidado-capilar">Cuidado Capilar</button>
+                <button class="pill-categoria" data-categoria="kits-sets">Kits y Sets</button>
+            </div>
+
+            <!-- Ordenación y filtros avanzados -->
+            <div class="opciones-catalogo">
+                <div class="ordenar-por">
+                    <label for="orden">Ordenar por:</label>
+                    <select id="orden" name="orden">
+                        <option value="relevancia">Relevancia</option>
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <option value="nombre">Nombre (A-Z)</option>
+                    </select>
+                </div>
+                <button class="boton-filtros-avanzados" id="toggle-filtros">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" y1="21" x2="4" y2="14"></line>
+                        <line x1="4" y1="10" x2="4" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="3"></line>
+                        <line x1="20" y1="21" x2="20" y2="16"></line>
+                        <line x1="20" y1="12" x2="20" y2="3"></line>
+                        <line x1="1" y1="14" x2="7" y2="14"></line>
+                        <line x1="9" y1="8" x2="15" y2="8"></line>
+                        <line x1="17" y1="16" x2="23" y2="16"></line>
+                    </svg>
+                    Filtros
+                </button>
+            </div>
+        </section>
+
+        <!-- Filtros avanzados (colapsable) -->
+        <section class="filtros-avanzados" id="filtros-avanzados" hidden>
+            <div class="grupo-filtro">
+                <h3>Valores</h3>
+                <div class="checkboxes-filtro">
+                    <label class="checkbox-filtro">
+                        <input type="checkbox" name="valor" value="vegano">
+                        <span class="checkmark"></span>
+                        Vegano
+                    </label>
+                    <label class="checkbox-filtro">
+                        <input type="checkbox" name="valor" value="cruelty-free">
+                        <span class="checkmark"></span>
+                        Cruelty-free
+                    </label>
+                    <label class="checkbox-filtro">
+                        <input type="checkbox" name="valor" value="natural">
+                        <span class="checkmark"></span>
+                        Natural
+                    </label>
+                </div>
+            </div>
+            <div class="grupo-filtro">
+                <h3>Disponibilidad</h3>
+                <div class="checkboxes-filtro">
+                    <label class="checkbox-filtro">
+                        <input type="checkbox" name="disponibilidad" value="disponible">
+                        <span class="checkmark"></span>
+                        Disponible en tienda
+                    </label>
+                    <label class="checkbox-filtro">
+                        <input type="checkbox" name="disponibilidad" value="ultimas-unidades">
+                        <span class="checkmark"></span>
+                        Últimas unidades
+                    </label>
+                </div>
+            </div>
+            <button class="boton-aplicar-filtros">Aplicar Filtros</button>
+        </section>
+
+        <!-- Contador de resultados -->
+        <p class="contador-resultados">Mostrando <strong>6</strong> productos</p>
+
+        <!-- Grid de productos -->
+        <section class="grid-productos-catalogo">
+            <!-- Producto 1 -->
+            <article class="tarjeta-producto" data-categoria="cuidado-facial" data-valor="natural" data-precio="45000" data-nombre="Crema Hidratante Vital">
+                <div class="imagen-contenedor">
+                    <img src="imagenes/productos/producto-ejemplo-1.jpg" alt="Crema Hidratante Vital" loading="lazy">
+                    <span class="badge-descuento">10% dto</span>
+                </div>
+                <div class="info-producto">
+                    <p class="marca">BeautyCare</p>
+                    <h3>Crema Hidratante Vital</h3>
+                    <p class="descripcion">Crema hidratante intensiva para piel seca. Nutre y repara la barrera cutánea.</p>
+                    <div class="precios">
+                        <span class="precio-normal">$45.000</span>
+                        <span class="precio-descuento">$40.500</span>
+                    </div>
+                    <p class="stock"><span class="indicador-stock disponible"></span>Disponible en tienda</p>
+                    <div class="acciones-producto">
+                        <button class="boton-reservar">Reservar</button>
+                        <button class="boton-favorito" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 2 -->
+            <article class="tarjeta-producto" data-categoria="maquillaje" data-valor="cruelty-free" data-precio="65000" data-nombre="Base de Maquillaje Natural">
+                <div class="imagen-contenedor">
+                    <img src="imagenes/productos/producto-ejemplo-2.jpg" alt="Base de Maquillaje Natural" loading="lazy">
+                    <span class="badge-descuento">10% dto</span>
+                </div>
+                <div class="info-producto">
+                    <p class="marca">GlamourStyle</p>
+                    <h3>Base de Maquillaje Natural</h3>
+                    <p class="descripcion">Base de cobertura media con acabado natural y SPF 20.</p>
+                    <div class="precios">
+                        <span class="precio-normal">$65.000</span>
+                        <span class="precio-descuento">$58.500</span>
+                    </div>
+                    <p class="stock"><span class="indicador-stock ultimas-unidades"></span>Últimas unidades</p>
+                    <div class="acciones-producto">
+                        <button class="boton-reservar">Reservar</button>
+                        <button class="boton-favorito" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 3 -->
+            <article class="tarjeta-producto" data-categoria="cuidado-corporal" data-valor="vegano natural" data-precio="38000" data-nombre="Loción Corporal Regeneradora">
+                <div class="imagen-contenedor">
+                    <img src="imagenes/productos/producto-ejemplo-3.jpg" alt="Loción Corporal Regeneradora" loading="lazy">
+                    <span class="badge-descuento">10% dto</span>
+                </div>
+                <div class="info-producto">
+                    <p class="marca">EcoSkin</p>
+                    <h3>Loción Corporal Regeneradora</h3>
+                    <p class="descripcion">Loción corporal con aloe vera y vitamina E. Ideal para piel muy seca.</p>
+                    <div class="precios">
+                        <span class="precio-normal">$38.000</span>
+                        <span class="precio-descuento">$34.200</span>
+                    </div>
+                    <p class="stock"><span class="indicador-stock disponible"></span>Disponible en tienda</p>
+                    <div class="acciones-producto">
+                        <button class="boton-reservar">Reservar</button>
+                        <button class="boton-favorito" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 4 -->
+            <article class="tarjeta-producto" data-categoria="cuidado-capilar" data-valor="natural" data-precio="32000" data-nombre="Shampoo Hidratante Reparador">
+                <div class="imagen-contenedor">
+                    <img src="imagenes/productos/producto-ejemplo-4.jpg" alt="Shampoo Hidratante Reparador" loading="lazy">
+                    <span class="badge-descuento">10% dto</span>
+                </div>
+                <div class="info-producto">
+                    <p class="marca">HairLove</p>
+                    <h3>Shampoo Hidratante Reparador</h3>
+                    <p class="descripcion">Shampoo sin sulfatos para cabello seco y dañado. Aroma a coco.</p>
+                    <div class="precios">
+                        <span class="precio-normal">$32.000</span>
+                        <span class="precio-descuento">$28.800</span>
+                    </div>
+                    <p class="stock"><span class="indicador-stock disponible"></span>Disponible en tienda</p>
+                    <div class="acciones-producto">
+                        <button class="boton-reservar">Reservar</button>
+                        <button class="boton-favorito" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 5 -->
+            <article class="tarjeta-producto" data-categoria="kits-sets" data-valor="cruelty-free" data-precio="85000" data-nombre="Kit de Limpieza Facial Completo">
+                <div class="imagen-contenedor">
+                    <img src="imagenes/productos/producto-ejemplo-5.jpg" alt="Kit de Limpieza Facial Completo" loading="lazy">
+                    <span class="badge-descuento">15% dto</span>
+                </div>
+                <div class="info-producto">
+                    <p class="marca">BeautyCare</p>
+                    <h3>Kit de Limpieza Facial Completo</h3>
+                    <p class="descripcion">Incluye: limpiador, tónico, mascarilla y crema. Todo lo que necesitás para tu rutina.</p>
+                    <div class="precios">
+                        <span class="precio-normal">$85.000</span>
+                        <span class="precio-descuento">$76.500</span>
+                    </div>
+                    <p class="stock"><span class="indicador-stock disponible"></span>Disponible en tienda</p>
+                    <div class="acciones-producto">
+                        <button class="boton-reservar">Reservar</button>
+                        <button class="boton-favorito" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 6 -->
+            <article class="tarjeta-producto" data-categoria="cuidado-facial" data-valor="natural" data-precio="72000" data-nombre="Sérum Revitalizante Anti-edad">
+                <div class="imagen-contenedor">
+                    <img src="imagenes/productos/producto-ejemplo-6.jpg" alt="Sérum Revitalizante Anti-edad" loading="lazy">
+                    <span class="badge-descuento">10% dto</span>
+                </div>
+                <div class="info-producto">
+                    <p class="marca">AgeLess</p>
+                    <h3>Sérum Revitalizante Anti-edad</h3>
+                    <p class="descripcion">Sérum con ácido hialurónico y vitamina C. Reduce líneas de expresión.</p>
+                    <div class="precios">
+                        <span class="precio-normal">$72.000</span>
+                        <span class="precio-descuento">$64.800</span>
+                    </div>
+                    <p class="stock"><span class="indicador-stock ultimas-unidades"></span>Pocas unidades</p>
+                    <div class="acciones-producto">
+                        <button class="boton-reservar">Reservar</button>
+                        <button class="boton-favorito" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Aviso de disponibilidad -->
+        <p class="aviso-stock">La disponibilidad puede variar. Tu reserva se confirmará al llegar a la tienda.</p>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="info-contacto">
+            <p> Dirección: Calle Falsa 123, Lima</p>
+            <p> Teléfono: +51 987 654 321</p>
+            <p> correo@negocio.com</p>
+        </div>
+        <div class="enlaces-legales">
+            <a href="libro-reclamaciones.html">Libro de Reclamaciones</a>
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="politica-reservas.html">Política de Reservas</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 - Nombre del Negocio
+        </div>
+    </footer>
+
+    <script src="js/scripts-globales.js" defer></script>
+    <script src="js/catalogo.js" defer></script>
+
+    <!-- Botón Flotante Asistente IA -->
+    <button
+        class="boton-flotante-ia"
+        id="abrir-chat"
+        aria-label="Abrir Asistente Virtual"
+    >
+        <span class="icono-ia">🤖</span>
+        <span class="texto-ia">Asistente IA</span>
+    </button>
+</body>
+</html>

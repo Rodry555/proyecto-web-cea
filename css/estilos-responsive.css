@@ -1,0 +1,405 @@
+/* ============================================
+   ESTILOS RESPONSIVE - Belleza Integral
+   Mobile First & Media Queries
+   ============================================ */
+
+/* --- Mobile First (Base styles already in principal) --- */
+
+/* --- Animations & Transitions --- */
+
+/* Efecto de flotación suave para elementos interactivos */
+.hover-float {
+    transition: transform var(--transicion-media), box-shadow var(--transicion-media);
+}
+
+.hover-float:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-media);
+}
+
+/* Skeleton loading para imágenes */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: var(--radio-borde);
+}
+
+/* Efecto parallax suave en backgrounds */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* --- Media Queries --- */
+
+/* Tablets grandes y laptops pequeñas */
+@media (max-width: 1024px) {
+    .contenedor-principal {
+        padding: var(--espaciado-grande) var(--espaciado-medio);
+    }
+    
+    .grid-productos,
+    .grid-servicios {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    :root {
+        --espaciado-grande: 24px;
+        --espaciado-xl: 48px;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Header responsive */
+    .cabecera {
+        padding: var(--espaciado-medio);
+    }
+    
+    .menu-principal ul {
+        gap: var(--espaciado-medio);
+    }
+    
+    .menu-principal a {
+        font-size: 0.95rem;
+        padding: var(--espaciado-chico);
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    /* Footer responsive */
+    .pie-pagina {
+        padding: var(--espaciado-grande) var(--espaciado-medio);
+    }
+    
+    .pie-pagina .enlaces-legales {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espaciado-medio);
+    }
+    
+    /* Grid flexible */
+    .grid-productos,
+    .grid-servicios {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--espaciado-medio);
+    }
+    
+    /* Tarjetas */
+    .tarjeta-producto img,
+    .tarjeta-servicio .imagen-servicio {
+        height: 180px;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+    :root {
+        --espaciado-medio: 12px;
+        --espaciado-grande: 20px;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.35rem;
+    }
+    
+    /* Header apilado */
+    .cabecera {
+        flex-direction: column;
+        gap: var(--espaciado-medio);
+    }
+    
+    .menu-principal ul {
+        gap: var(--espaciado-chico);
+        justify-content: center;
+    }
+    
+    .menu-principal a {
+        font-size: 0.85rem;
+    }
+    
+    .carrito-icono a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Hero */
+    .hero-banner {
+        padding: var(--espaciado-grande) var(--espaciado-medio);
+    }
+    
+    .hero-banner h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-banner p {
+        font-size: 1rem;
+    }
+    
+    /* Grids a 1 columna */
+    .grid-productos,
+    .grid-servicios,
+    .grid-productos-catalogo {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Botones a ancho completo */
+    .boton-reservar,
+    .boton-ver-catalogo,
+    .boton-contacto,
+    .boton-enviar {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Formularios */
+    .formulario-contacto-seccion,
+    .formulario-confirmacion {
+        padding: var(--espaciado-medio);
+    }
+    
+    .grupo-formulario input,
+    .grupo-formulario select,
+    .grupo-formulario textarea {
+        padding: 12px 14px;
+    }
+    
+    /* Info contacto */
+    .detalle-contacto {
+        text-align: center;
+    }
+    
+    .detalle-contacto ul li::before {
+        display: none;
+    }
+    
+    .detalle-contacto ul li {
+        padding-left: 0;
+    }
+    
+    .redes-sociales {
+        justify-content: center;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .menu-principal ul {
+        gap: 6px;
+    }
+    
+    .menu-principal a {
+        font-size: 0.8rem;
+    }
+    
+    .cabecera {
+        padding: 10px;
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* --- Utilities para responsive --- */
+
+/* Ocultar en móviles */
+@media (max-width: 480px) {
+    .ocultar-movil {
+        display: none !important;
+    }
+}
+
+/* Ocultar en desktop */
+@media (min-width: 481px) {
+    .ocultar-desktop {
+        display: none !important;
+    }
+}
+
+/* Mostrar solo en desktop */
+@media (min-width: 769px) {
+    .solo-desktop {
+        display: block;
+    }
+}
+
+/* Ajustes de tipografía fluid */
+html {
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+/* --- Mejoras de accesibilidad touch --- */
+@media (hover: none) and (pointer: coarse) {
+    /* Botones más grandes para touch */
+    .boton-reservar,
+    .boton-ver-catalogo,
+    .boton-contacto,
+    button,
+    .tarjeta-producto,
+    .tarjeta-servicio {
+        min-height: 44px;
+    }
+    
+    /* Reducir efectos de hover que pueden ser molestos en touch */
+    .tarjeta-producto:hover,
+    .tarjeta-servicio:hover {
+        transform: none;
+    }
+    
+    /* Efectos de activo en touch */
+    .boton-reservar:active,
+    .boton-ver-catalogo:active {
+        transform: scale(0.98);
+    }
+}
+
+/* --- Soporte para modo oscuro (prefiere el sistema) --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-fondo: #1A1A1A;
+        --color-blanco: #2D2D2D;
+        --color-texto: #E0E0E0;
+        --color-texto-claro: #BDBDBD;
+    }
+    
+    /* Ajustes adicionales para modo oscuro */
+    .cabecera {
+        background-color: #242424;
+    }
+    
+    .pie-pagina {
+        background: #0D0D0D;
+    }
+    
+    .tarjeta-producto,
+    .tarjeta-servicio,
+    .formulario-contacto-seccion,
+    .lista-productos-carrito,
+    .resumen-reserva {
+        background-color: #2D2D2D;
+    }
+    
+    .filtros-catalogo {
+        background-color: #2D2D2D;
+    }
+}
+
+/* --- Animaciones de entrada --- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Clases de animación */
+.anim-slide-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.anim-slide-right {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.anim-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* --- Print styles --- */
+@media print {
+    .cabecera,
+    .pie-pagina,
+    .carrito-icono,
+    .boton-reservar,
+    .boton-favorito,
+    .filtros-catalogo {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .contenedor-principal {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+    
+    .tarjeta-producto {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
