@@ -1,0 +1,34 @@
+1. Identidad Visual y Estilo (CSS)
+La interfaz debe transmitir limpieza y bienestar. Aplica los siguientes criterios de diseño:
+    Paleta de Colores: Usa un fondo Beige Suave (#FAF8F5) para el cuerpo de la página. Los textos principales deben ir en Gris Carbón (#2C2C2C). El color de acento para botones y elementos destacados será un Verde Salvia o Rosa Palo suave. Para los descuentos y precios finales, utiliza un Dorado o Verde Oliva.
+    Tipografía: Emplea fuentes Sans-Serif limpias para el cuerpo del texto y una fuente con serifa elegante para los títulos de sección.
+    Layout: Utiliza CSS Grid para dividir la página en dos columnas en pantallas de escritorio (65% para productos, 35% para el resumen). En dispositivos móviles, estas columnas deben apilarse automáticamente en una sola.
+2. Estructura del Contenido (HTML)
+A. Columna de Productos (Izquierda)
+    Límite de Reserva: Incluye una pequeña nota informativa en la parte superior: "Puedes reservar un máximo de 5 productos por vez".
+    Contenedor de Lista: Crea un div dinámico que servirá para mostrar los productos.
+    Formato de Tarjetas (Cards): Sustituye cualquier tabla por tarjetas individuales maquetadas con Flexbox. Cada tarjeta debe contener:
+        Imagen miniatura del producto con bordes redondeados.
+        Nombre del producto.
+        Selector de cantidad (bloqueado o limitado).
+        Visualización de precios: Precio original tachado y Precio Reserva (10% OFF) resaltado.
+        Botón de eliminación con un ícono estético (basurero o una "X" elegante).
+B. Columna de Resumen y Formulario (Derecha)
+    Bloque de Totales:
+        Muestra el Subtotal, el Descuento aplicado (10%) y el Total a pagar en tienda en una fuente más grande y destacada.
+        Añade el aviso legal: "Pagas al recoger tus productos en tienda física".
+        Añade la nota de vigencia: "Esta reserva y tu descuento son válidos por 48 horas".
+    Formulario de Confirmación Rápida:
+        Campo 1: Nombre completo.
+        Campo 2: WhatsApp (campo obligatorio para coordinación).
+        Campo 3: Checkbox de aceptación de términos y compromiso de recogida en 48 horas.
+    Botón de Acción: Un botón prominente que ocupe todo el ancho del bloque con el texto: "Confirmar mi Reserva y Descuento".
+3. Lógica de Funcionamiento (JavaScript Mínimo)
+    Gestión de Inventario en el Carrito: Implementa una validación que impida agregar más de 5 ítems al carrito. Si el usuario intenta agregar un sexto, debe aparecer una notificación sutil indicando el límite.
+    Estado Vacío (Empty State): Si el carrito no contiene productos, la página no debe quedar en blanco. Debe mostrar automáticamente un mensaje centralizado: "Tu carrito de belleza está vacío por ahora. ¡Explora nuestro catálogo!", acompañado de un botón visible llamado "Ver Catálogo".
+    Cálculo Automático: El script debe recalcular el 10% de descuento y el total final instantáneamente cada vez que se elimine un producto o se modifique una cantidad.
+    Persistencia Local: Utiliza localStorage para que la lista de productos seleccionados no se borre si el usuario recarga la página o cierra el navegador accidentalmente.
+4. Flujo de Usuario y UX
+    Sin Registros: El proceso de reserva debe ser directo. Al presionar "Confirmar Reserva", el sistema debe validar los campos del formulario y generar el código de reserva sin pedir contraseñas ni creación de cuentas.
+    Claridad Móvil: En la versión de celular, el botón de "Confirmar Reserva" debe estar siempre accesible, idealmente después de revisar la lista de productos.
+    Confirmación Visual: Al finalizar la acción, redirige al usuario a la página de confirmación ya establecida, donde verá su código y el botón para enviar el resumen por WhatsApp.
