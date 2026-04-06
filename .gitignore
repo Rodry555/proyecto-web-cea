@@ -13,3 +13,9 @@ Thumbs.db
 
 # Node (si se agrega en el futuro)
 node_modules/
+
+# Archivos de contexto y documentación local
+AGENTS.md
+CONTEXTOGENERAL.md
+skills/
+*.txt
