@@ -8,17 +8,17 @@
 /* --- Animations & Transitions --- */
 
 /* Efecto de flotación suave para elementos interactivos */
-.hover-float {
+.flotar-hover {
     transition: transform var(--transicion-media), box-shadow var(--transicion-media);
 }
 
-.hover-float:hover {
+.flotar-hover:hover {
     transform: translateY(-4px);
     box-shadow: var(--sombra-media);
 }
 
 /* Skeleton loading para imágenes */
-@keyframes skeleton-loading {
+@keyframes carga-esqueleto {
     0% {
         background-position: -200px 0;
     }
@@ -27,15 +27,15 @@
     }
 }
 
-.skeleton {
+.esqueleto {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200px 100%;
-    animation: skeleton-loading 1.5s infinite;
+    animation: carga-esqueleto 1.5s infinite;
     border-radius: var(--radio-borde);
 }
 
 /* Efecto parallax suave en backgrounds */
-.parallax-bg {
+.fondo-parallax {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,24 +75,6 @@
         font-size: 1.5rem;
     }
     
-    /* Header responsive */
-    .cabecera {
-        padding: var(--espaciado-medio);
-    }
-    
-    .menu-principal ul {
-        gap: var(--espaciado-medio);
-    }
-    
-    .menu-principal a {
-        font-size: 0.95rem;
-        padding: var(--espaciado-chico);
-    }
-    
-    .logo img {
-        height: 50px;
-    }
-    
     /* Footer responsive */
     .pie-pagina {
         padding: var(--espaciado-grande) var(--espaciado-medio);
@@ -105,15 +87,13 @@
     }
     
     /* Grid flexible */
-    .grid-productos,
-    .grid-servicios {
+    .grid-productos {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: var(--espaciado-medio);
     }
     
     /* Tarjetas */
-    .tarjeta-producto img,
-    .tarjeta-servicio .imagen-servicio {
+    .tarjeta-producto img {
         height: 180px;
     }
 }
@@ -148,47 +128,15 @@
     
     /* Grids a 1 columna */
     .grid-productos,
-    .grid-servicios,
     .grid-productos-catalogo {
         grid-template-columns: 1fr;
     }
     
     /* Botones a ancho completo */
     .boton-reservar,
-    .boton-ver-catalogo,
-    .boton-contacto,
-    .boton-enviar {
+    .boton-ver-catalogo {
         width: 100%;
         text-align: center;
-    }
-    
-    /* Formularios */
-    .formulario-contacto-seccion,
-    .formulario-confirmacion {
-        padding: var(--espaciado-medio);
-    }
-    
-    .grupo-formulario input,
-    .grupo-formulario select,
-    .grupo-formulario textarea {
-        padding: 12px 14px;
-    }
-    
-    /* Info contacto */
-    .detalle-contacto {
-        text-align: center;
-    }
-    
-    .detalle-contacto ul li::before {
-        display: none;
-    }
-    
-    .detalle-contacto ul li {
-        padding-left: 0;
-    }
-    
-    .redes-sociales {
-        justify-content: center;
     }
 }
 
@@ -196,22 +144,6 @@
 @media (max-width: 360px) {
     body {
         font-size: 14px;
-    }
-    
-    .menu-principal ul {
-        gap: 6px;
-    }
-    
-    .menu-principal a {
-        font-size: 0.8rem;
-    }
-    
-    .cabecera {
-        padding: 10px;
-    }
-    
-    .logo img {
-        height: 45px;
     }
     
     h1 {
@@ -252,16 +184,13 @@ html {
     /* Botones más grandes para touch */
     .boton-reservar,
     .boton-ver-catalogo,
-    .boton-contacto,
     button,
-    .tarjeta-producto,
-    .tarjeta-servicio {
+    .tarjeta-producto {
         min-height: 44px;
     }
     
     /* Reducir efectos de hover que pueden ser molestos en touch */
-    .tarjeta-producto:hover,
-    .tarjeta-servicio:hover {
+    .tarjeta-producto:hover {
         transform: none;
     }
     
@@ -290,11 +219,7 @@ html {
         background: #0D0D0D;
     }
     
-    .tarjeta-producto,
-    .tarjeta-servicio,
-    .formulario-contacto-seccion,
-    .lista-productos-carrito,
-    .resumen-reserva {
+    .tarjeta-producto {
         background-color: #2D2D2D;
     }
     
@@ -304,7 +229,7 @@ html {
 }
 
 /* --- Animaciones de entrada --- */
-@keyframes slideInLeft {
+@keyframes deslizar-izquierda {
     from {
         opacity: 0;
         transform: translateX(-30px);
@@ -315,7 +240,7 @@ html {
     }
 }
 
-@keyframes slideInRight {
+@keyframes deslizar-derecha {
     from {
         opacity: 0;
         transform: translateX(30px);
@@ -326,7 +251,7 @@ html {
     }
 }
 
-@keyframes fadeIn {
+@keyframes aparicion {
     from {
         opacity: 0;
     }
@@ -336,24 +261,24 @@ html {
 }
 
 /* Clases de animación */
-.anim-slide-left {
-    animation: slideInLeft 0.5s ease-out forwards;
+.anim-deslizar-izq {
+    animation: deslizar-izquierda 0.5s ease-out forwards;
 }
 
-.anim-slide-right {
-    animation: slideInRight 0.5s ease-out forwards;
+.anim-deslizar-der {
+    animation: deslizar-derecha 0.5s ease-out forwards;
 }
 
-.anim-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+.anim-aparicion {
+    animation: aparicion 0.5s ease-out forwards;
 }
 
 /* Delay utilities */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.retraso-100 { animation-delay: 100ms; }
+.retraso-200 { animation-delay: 200ms; }
+.retraso-300 { animation-delay: 300ms; }
+.retraso-400 { animation-delay: 400ms; }
+.retraso-500 { animation-delay: 500ms; }
 
 /* --- Print styles --- */
 @media print {

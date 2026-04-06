@@ -111,19 +111,14 @@ a:hover {
     z-index: 1000;
     padding: 12px var(--espaciado-medio);
     display: flex;
-    flex-direction: row; /* Forzar fila siempre */
-    justify-content: space-between; /* Logo a la izq, Hamburguesa a la der */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     transition: all var(--transicion-media);
 }
 
-/* Asegurar que el carrito no rompa el flujo en móvil */
-.carrito-icono {
-    display: none; /* Oculto por defecto en móvil */
-}
-
 .logo img {
-    height: 45px; /* Tamaño adecuado para móvil */
+    height: 45px;
     width: auto;
     transition: transform var(--transicion-media);
 }
@@ -132,32 +127,6 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Botón Hamburguesa */
-.boton-hamburguesa {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 32px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001;
-    margin-left: auto; /* Empuja el botón a la derecha si hay otros elementos */
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
-    transition: transform var(--transicion-media);
-}
-
-.logo img:hover {
-    transform: scale(1.05);
-}
-
-/* Botón Hamburguesa */
 .boton-hamburguesa {
     display: flex;
     flex-direction: column;
@@ -169,6 +138,7 @@ a:hover {
     cursor: pointer;
     padding: 0;
     z-index: 1001;
+    margin-left: auto;
 }
 
 .boton-hamburguesa .linea {
@@ -210,7 +180,7 @@ a:hover {
 
 /* Estado abierto del menú */
 .menu-principal.menu-abierto {
-    max-height: 500px; /* Aumentado para incluir el carrito */
+    max-height: 500px;
     opacity: 1;
     visibility: visible;
     padding: var(--espaciado-medio) 0;
@@ -261,7 +231,7 @@ a:hover {
 
 /* --- Carrito Móvil (Dentro del menú) --- */
 .enlace-carrito-movil {
-    display: block; /* Visible en móvil */
+    display: block;
 }
 
 .enlace-carrito-movil a {
@@ -290,7 +260,7 @@ a:hover {
 
 /* --- Carrito Escritorio (Fuera del menú) --- */
 .carrito-icono {
-    display: none; /* Oculto en móvil por defecto */
+    display: none;
 }
 
 /* --- MEDIA QUERY: ESCRITORIO (>768px) --- */
@@ -460,10 +430,7 @@ a:hover {
 }
 
 /* --- Botones Generales --- */
-.boton-reservar,
-.boton-solicitar-cita,
-.boton-enviar,
-.boton-confirmar-reserva {
+.boton-reservar {
     display: inline-block;
     background: linear-gradient(135deg, var(--color-secundario), #9C1984);
     color: var(--color-blanco);
@@ -479,26 +446,19 @@ a:hover {
     text-decoration: none;
 }
 
-.boton-reservar:hover,
-.boton-solicitar-cita:hover,
-.boton-enviar:hover,
-.boton-confirmar-reserva:hover {
+.boton-reservar:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(194, 24, 91, 0.5);
     color: var(--color-blanco);
 }
 
-.boton-reservar:active,
-.boton-solicitar-cita:active,
-.boton-enviar:active,
-.boton-confirmar-reserva:active {
+.boton-reservar:active {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(194, 24, 91, 0.4);
 }
 
 /* Botón secundario */
-.boton-ver-catalogo,
-.boton-contacto {
+.boton-ver-catalogo {
     display: inline-block;
     background-color: transparent;
     color: var(--color-secundario);
@@ -511,8 +471,7 @@ a:hover {
     transition: all var(--transicion-media);
 }
 
-.boton-ver-catalogo:hover,
-.boton-contacto:hover {
+.boton-ver-catalogo:hover {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
     transform: translateY(-3px);
@@ -520,8 +479,6 @@ a:hover {
 }
 
 /* --- Intro texto general --- */
-.intro-servicios,
-.intro-reservar,
 .intro-contacto {
     text-align: center;
     font-size: 1.2rem;
@@ -530,68 +487,13 @@ a:hover {
     margin: 0 auto var(--espaciado-xl);
 }
 
-/* --- Hero Banner (Inicio) --- */
-.hero-banner {
-    background: linear-gradient(135deg, rgba(232, 213, 213, 0.9) 0%, rgba(245, 240, 235, 0.95) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="%23D4AF37" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-    padding: var(--espaciado-xl) var(--espaciado-grande);
-    border-radius: var(--radio-borde-lg);
-    text-align: center;
-    margin-bottom: var(--espaciado-xl);
-    box-shadow: var(--sombra-media);
-    position: relative;
-    overflow: hidden;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.hero-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
-    animation: shimmer 3s infinite linear;
-}
-
-.hero-banner h1 {
-    font-size: 3rem;
-    background: linear-gradient(135deg, var(--color-secundario), var(--color-acento));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--espaciado-medio);
-}
-
-.hero-banner p {
-    font-size: 1.3rem;
-    color: var(--color-texto-claro);
-    margin-bottom: var(--espaciado-grande);
-}
-
-/* --- Secciones Generales --- */
-.productos-destacados {
-    margin-bottom: var(--espaciado-xl);
-}
-
-.productos-destacados h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-acento);
-    margin: var(--espaciado-chico) auto 0;
-    border-radius: 2px;
-}
-
 /* --- Grid de productos (genérico) --- */
 .grid-productos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--espaciado-grande);
 }
-@keyframes fadeInUp {
+@keyframes aparicion-arriba {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -612,16 +514,16 @@ a:hover {
 }
 
 /* Efecto de aparición suave para elementos */
-.fade-in {
+.aparicion-suave {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: aparicion-arriba 0.6s ease-out forwards;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+.retraso-1 { animation-delay: 0.1s; }
+.retraso-2 { animation-delay: 0.2s; }
+.retraso-3 { animation-delay: 0.3s; }
+.retraso-4 { animation-delay: 0.4s; }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {

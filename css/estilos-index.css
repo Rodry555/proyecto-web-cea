@@ -43,7 +43,7 @@
     position: relative;
     z-index: 2;
     max-width: 700px;
-    animation: fadeInUp 0.8s ease-out;
+    animation: aparicion-arriba 0.8s ease-out;
 }
 
 .hero-contenido h1 {
