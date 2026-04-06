@@ -1,6 +1,0 @@
-"Agente, necesito limpiar el repositorio porque subí por error archivos de contexto a GitHub. Por favor, realiza exactamente los siguientes pasos sin borrar mis archivos locales del disco duro:
-
-    Ejecuta git rm -r --cached AGENTS.md CONTEXTOGENERAL.md skills/  texto.txt(incluye cualquier otro archivo que necesite ocultar) para sacarlos del rastreo de Git en todas la ramas.
-
-    Crea o actualiza el archivo .gitignore y añade esos mismos archivos y carpetas para que sean ignorados en el futuro.
-    Ejecuta un git push para actualizar mi rama actual en GitHub en todas las ramas ."
